@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARS - للألوميتال والزجاج والمطابخ الحديثة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 60px;
+            letter-spacing: 8px;
+            color: #3498db;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #ecf0f1;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1a252f;
+            font-size: 32px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            width: 350px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-box img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-box h3 {
+            color: #2c3e50;
+            margin: 15px;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .service-box p {
+            padding: 0 15px 20px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            background: white;
+            margin-top: 30px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .gallery-info h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .gallery-info .size {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .gallery-info .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .gallery-info .desc {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: #1a252f;
+            color: white;
+            padding: 50px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            color: #3498db;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .phone-number {
+            font-size: 28px;
+            color: #3498db;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 15px 0;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            margin-top: 25px;
+            opacity: 0.6;
+        }
+
+        /* ===== WHATSAPP BUTTON ===== */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+                letter-spacing: 4px;
+            }
+
+            .service-box {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .contact-info {
+                gap: 20px;
+            }
+
+            .phone-number {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#kitchens">المطابخ</a>
+        <a href="#aluminum">الألوميتال</a>
+        <a href="#glass">الزجاج</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <h1>ARS</h1>
+        <p>الريادة في عالم الألوميتال، الزجاج، والمطابخ الحديثة</p>
+    </header>
+
+    <!-- Services -->
+    <div class="section" id="services">
+        <h2 class="section-title">خدماتنا الرئيسية</h2>
+        <div class="services">
+
+            <div class="service-box">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="أعمال ألوميتال">
+                <h3>أعمال الألوميتال</h3>
+                <p>شبابيك وأبواب ألوميتال بأحدث القطاعات مع عزل تام للصوت والحرارة.</p>
+            </div>
+
+            <div class="service-box">
+                <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=600" alt="زجاج سيكوريت">
+                <h3>زجاج وسيكوريت</h3>
+                <p>تركيب واجهات زجاجية، كبائن شاور، ومرايات ليد بأعلى تنفيذ احترافي.</p>
+            </div>
+
+            <div class="service-box">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" alt="مطابخ حديثة">
+                <h3>مطابخ ألوميتال مودرن</h3>
+                <p>تصميم وتفصيل مطابخ عصرية تناسب كل المساحات بأسعار تنافسية.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Kitchens Gallery -->
+    <div class="section gallery" id="kitchens">
+        <h2 class="section-title">معرض المطابخ - بمقاسات وأسعار</h2>
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="مطبخ 2 متر">
+                <div class="gallery-info">
+                    <h4>مطبخ ألوميتال مودرن</h4>
+                    <div class="size">📐 المقاس: 2 متر</div>
+                    <div class="price">💰 السعر: 8,500 ج.م</div>
+                    <div class="desc">خزائن علوية + سفلية + رخام صناعي</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="مطبخ 3 متر">
+                <div class="gallery-info">
+                    <h4>مطبخ ألوميتال فاخر</h4>
+                    <div class="size">📐 المقاس: 3 متر</div>
+                    <div class="price">💰 السعر: 12,000 ج.م</div>
+                    <div class="desc">خزائن علوية + سفلية + جزيرة + إضاءة LED</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" alt="مطبخ 4 متر">
+                <div class="gallery-info">
+                    <h4>مطبخ ألوميتال ديلوكس</h4>
+                    <div class="size">📐 المقاس: 4 متر</div>
+                    <div class="price">💰 السعر: 16,500 ج.م</div>
+                    <div class="desc">خزائن علوية + سفلية + جزيرة مزدوجة + إضاءة</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400" alt="مطبخ 5 متر">
+                <div class="gallery-info">
+                    <h4>مطبخ ألوميتال رويال</h4>
+                    <div class="size">📐 المقاس: 5 متر</div>
+                    <div class="price">💰 السعر: 22,000 ج.م</div>
+                    <div class="desc">تصميم مخصص + خزائن كاملة + أجهزة كهربائية</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Aluminum Gallery -->
+    <div class="section gallery" id="aluminum">
+        <h2 class="section-title">معرض الألوميتال - شبابيك وأبواب</h2>
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="شباك ألوميتال">
+                <div class="gallery-info">
+                    <h4>شباك ألوميتال مفصلي</h4>
+                    <div class="size">📐 المقاس: 120 × 100 سم</div>
+                    <div class="price">💰 السعر: 2,500 ج.م</div>
+                    <div class="desc">قطاع أوروبي + زجاج دبل + عزل صوت</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" alt="باب ألوميتال">
+                <div class="gallery-info">
+                    <h4>باب ألوميتال سحاب</h4>
+                    <div class="size">📐 المقاس: 200 × 90 سم</div>
+                    <div class="price">💰 السعر: 4,200 ج.م</div>
+                    <div class="desc">قطاع ثقيل + زجاج سيكوريت + قفل أمان</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400" alt="شباك بلكونة">
+                <div class="gallery-info">
+                    <h4>شباك بلكونة كبير</h4>
+                    <div class="size">📐 المقاس: 300 × 200 سم</div>
+                    <div class="price">💰 السعر: 8,500 ج.م</div>
+                    <div class="desc">قطاع عريض + زجاج دبل + شبك حماية</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="واجهة ألوميتال">
+                <div class="gallery-info">
+                    <h4>واجهة محل كاملة</h4>
+                    <div class="size">📐 المقاس: حسب الطلب</div>
+                    <div class="price">💰 السعر: يبدأ من 15,000 ج.م</div>
+                    <div class="desc">تصميم وتنفيذ كامل + تركيب + ضمان</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Glass Gallery -->
+    <div class="section gallery" id="glass">
+        <h2 class="section-title">معرض الزجاج والسيكوريت</h2>
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?w=400" alt="كبينة شاور">
+                <div class="gallery-info">
+                    <h4>كبينة شاور زجاج</h4>
+                    <div class="size">📐 المقاس: 90 × 90 سم</div>
+                    <div class="price">💰 السعر: 3,800 ج.م</div>
+                    <div class="desc">زجاج سيكوريت 8 مم + إطار استانلس</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="مرآة ليد">
+                <div class="gallery-info">
+                    <h4>مرآة حمام LED</h4>
+                    <div class="size">📐 المقاس: 80 × 60 سم</div>
+                    <div class="price">💰 السعر: 1,800 ج.م</div>
+                    <div class="desc">إضاءة LED + مضادة للبخار + لمس</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" alt="واجهة زجاجية">
+                <div class="gallery-info">
+                    <h4>واجهة زجاجية مكتب</h4>
+                    <div class="size">📐 المقاس: حسب الطلب</div>
+                    <div class="price">💰 السعر: يبدأ من 5,500 ج.م</div>
+                    <div class="desc">زجاج سيكوريت 10 مم + تركيب احترافي</div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400" alt="درج زجاج">
+                <div class="gallery-info">
+                    <h4>درج زجاجي سيكوريت</h4>
+                    <div class="size">📐 المقاس: حسب الطلب</div>
+                    <div class="price">💰 السعر: يبدأ من 12,000 ج.م</div>
+                    <div class="desc">زجاج مقسّى 12 مم + درابزين استانلس</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact" id="contact">
+        <h3>تواصل مع ARS الآن</h3>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>📞 رقم الهاتف</strong>
+                <div class="phone-number">010 24 70 80 53</div>
+            </div>
+            <div class="contact-item">
+                <strong>📍 العنوان</strong>
+                الجيزة - أرض اللواء
+            </div>
+            <div class="contact-item">
+                <strong>🕐 مواعيد العمل</strong>
+                السبت - الخميس | 9 ص - 6 م
+            </div>
+        </div>
+        <div class="footer-text">© 2026 جميع الحقوق محفوظة لشركة ARS</div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/201024708053" class="whatsapp-btn" target="_blank">
+        💬 تواصل واتساب
+    </a>
+
+</body>
+</html>
